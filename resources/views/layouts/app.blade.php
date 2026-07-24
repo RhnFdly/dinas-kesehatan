@@ -36,10 +36,13 @@
             </nav>
             
             <div class="p-4 border-t border-gray-200">
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-red-600 font-medium transition-all hover:bg-red-50">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-red-600 font-medium transition-all hover:bg-red-50">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                     Logout
-                </a>
+                    </button>
+                </form>
             </div>
         </aside>
 
@@ -60,11 +63,11 @@
                     </button>
                     <div class="flex items-center gap-3">
                         <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 flex items-center justify-center text-white font-bold shadow-md">
-                            A
+                            {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
                         </div>
                         <div class="hidden md:block text-sm">
-                            <p class="font-medium text-gray-700">Admin User</p>
-                            <p class="text-xs text-gray-500">Administrator</p>
+                            <p class="font-medium text-gray-700">{{ auth()->user()->name }}</p>
+                            <p class="text-xs text-gray-500">{{ auth()->user()->email }}</p>
                         </div>
                     </div>
                 </div>

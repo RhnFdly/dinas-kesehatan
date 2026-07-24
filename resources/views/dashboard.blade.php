@@ -7,7 +7,7 @@
     <!-- Welcome Banner -->
     <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
         <div class="relative z-10">
-            <h2 class="text-2xl font-bold mb-2">Selamat Datang, Admin!</h2>
+            <h2 class="text-2xl font-bold mb-2">Selamat Datang, {{ auth()->user()->name }}!</h2>
             <p class="text-blue-100 max-w-xl">Ini adalah dashboard sistem informasi Dinas Kesehatan. Anda dapat memantau data fasilitas kesehatan dan laporan dari sini.</p>
         </div>
         <div class="absolute right-0 top-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
